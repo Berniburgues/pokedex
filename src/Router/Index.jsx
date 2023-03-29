@@ -4,7 +4,7 @@ import Pokedex from '../pages/Pokedex';
 import PokemonDetail from '../pages/PokemonDetail';
 import PokedexLayout from '../components/PokedexLayout';
 import ProtectedRoute from '../components/ProtectedRoute';
-import { pokedexLoader } from './Loaders/PokedexLoader';
+import { pokedexLoader } from './Loaders/pokedexLoader';
 
 export const router = createBrowserRouter([
   {
