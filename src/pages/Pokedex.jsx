@@ -88,7 +88,7 @@ const Pokedex = () => {
         ))}
       </div>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto md:gap-1">
         {pokemonsPagination.listSlice.map((pokemon) => (
           <div className="w-64 h-96 mx-auto">
             <PokemonCard key={pokemon.url} pokemonData={pokemon} />
