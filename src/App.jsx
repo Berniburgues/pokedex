@@ -1,5 +1,3 @@
-// import { react, useState, useEffect, useContext } from 'react';
-
 function App() {
   return <div className="App"></div>;
 }

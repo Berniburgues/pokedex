@@ -46,28 +46,34 @@ const PokemonCard = ({ pokemonData }) => {
                 } opacity-100`}
               ></div>
               <img
-                src={pokemon.sprites.other.dream_world.front_default}
+                src={pokemon.sprites.other['official-artwork'].front_default}
                 alt={pokemon.name}
                 className="w-full h-full object-contain rounded-md absolute hover:cursor-pointer"
                 onClick={handleClickNavigate}
               />
             </div>
             <div className="bg-white border-2 border-black rounded-xl p-3 my-1 mx-3 md:mx-0 md:max-w-xl text-center">
-              <h2
-                className={`text-3xl font-bold first-letter:uppercase my-1 font-serif ${
-                  pokemonColorsText[pokemon.types[0].type.name]
-                }`}
-              >
-                {pokemon.name}
-              </h2>
-
-              <p
-                className={`text-base border-2 border-black text-gray-100 first-letter:uppercase w-1/2 mx-auto rounded-full mb-2 font-semibold ${
-                  pokemonColors[pokemon.types[0].type.name]
-                }`}
-              >
-                {pokemon.types[0].type.name}
-              </p>
+              <div className="w-48 overflow-hidden">
+                <h2
+                  className={`text-3xl font-bold first-letter:uppercase my-1 font-serif ${
+                    pokemonColorsText[pokemon.types[0].type.name]
+                  } whitespace-nowrap overflow-hidden text-ellipsis`}
+                >
+                  {pokemon.name}
+                </h2>
+              </div>
+              <div className="flex flex-row justify-center">
+                {pokemon.types.map((type, index) => (
+                  <p
+                    key={index}
+                    className={`text-base border-2 border-black text-gray-100 first-letter:uppercase w-1/2 mx-1 rounded-full mb-2 font-semibold ${
+                      pokemonColors[type.type.name]
+                    }`}
+                  >
+                    {type.type.name}
+                  </p>
+                ))}
+              </div>
 
               <hr className="my-1 mx-auto w-1/2 border-t border-black" />
               <div className="grid grid-cols-3 gap-1 mt-1">
